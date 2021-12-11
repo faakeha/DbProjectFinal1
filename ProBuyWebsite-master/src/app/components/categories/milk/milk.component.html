@@ -1,0 +1,75 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    div.scrollmenu {
+      background-color: #333;
+      overflow: auto;
+      white-space: nowrap;
+    }
+    
+    div.scrollmenu a {
+      display:inline;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+    }
+    
+    div.scrollmenu a:hover {
+      background-color: #777;
+    }
+    </style>
+    </head>
+    <body >
+        <div class= "container" >
+        <div id='box' >
+            <h5 id='subhead'> HALEEB </h5>
+            <div id='select-container' >
+                <div class="scrollmenu" >
+                            <!-- <a href="#home">Home</a> -->
+                        <div class="card" *ngFor = 'let us of haleeb'>
+                            <img src="assets\images\{{us.Image_string}}.png" style="width:50%" >
+                            <h4>{{us.ProductName}}</h4>
+                            <p class="price">Rs. {{us.ProductPrice}}</p>
+                            <p><button (click)=addToCart(us.ProductID,this.qty)>Add to Cart</button></p>
+                        </div>
+                </div>
+            </div>
+                </div>
+            </div>
+    
+            <div class= "container">
+                <div id='box'>
+                    <h5 id='subhead'> NESTLE </h5>
+                    <div id='select-container'>
+                        <div class="scrollmenu">
+                                    <!-- <a href="#home">Home</a> -->
+                                    <div class="card" *ngFor = 'let us of nestle'>
+                                        <img src="assets\images\{{us.Image_string}}.png" style="width:50%" >
+                                        <h4>{{us.ProductName}}</h4>
+                                        <p class="price">Rs. {{us.ProductPrice}}</p>
+                                        <p><button (click)=addToCart(us.ProductID,this.qty)>Add to Cart</button></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class= "container">
+                <div id='box'>
+                    <h5 id='subhead'> OLPERS </h5>
+                    <div id='select-container'>
+                        <div class="scrollmenu">
+                                    <!-- <a href="#home">Home</a> -->
+                                    <div class="card" *ngFor = 'let us of olpers'>
+                                        <img src="assets\images\{{us.Image_string}}.PNG" style="width:50%" >
+                                        <h4>{{us.ProductName}}</h4>
+                                        <p class="price">Rs. {{us.ProductPrice}}</p>
+                                        <p><button (click)=addToCart(us.ProductID,this.qty)>Add to Cart</button></p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    

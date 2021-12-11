@@ -1,0 +1,41 @@
+<form [formGroup] = "userForm" >
+<div class="container" style="background-color:#2C363F;color:white">
+
+    <!-- <h1> Track my order </h1> -->
+
+    <h6 style = "color:white; padding-top: 20px;"> Your order has been successfully placed! </h6>
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName = "Email" name="field1">
+
+    <!-- <button type="submit" class="btn btn-primary" (click)="userSubmit()">Track Order</button> -->
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+    
+    <div class="w3-container" >
+      <button type="submit"  (click)="userSubmit()" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-#F56416">Track order</button>
+    
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-#F56416" style="text-align: center;"> 
+            <span onclick="document.getElementById('id01').style.display='none'; location = 'home';" 
+            class="w3-button w3-display-topright">&times;</span>
+            <h2 class="heading">Tracking Info</h2>
+          </header>
+          <div class="w3-container"  *ngFor = 'let us of trackerData'>
+            <p style = "padding-top: 10px">Tracking ID: {{us.Tracking_ID}}</p>
+            <p>You placed you order on {{us.Order_Date}}</p>
+            <p>You will receive the ordered products by {{us.Estimated_Delivery_Date}}</p>
+          </div>
+          <!-- <footer class="w3-container w3-teal">
+            <p>Modal Footer</p>
+          </footer> -->
+        </div>
+      </div>
+    </div>
+
+ 
+  </div>
+</form>

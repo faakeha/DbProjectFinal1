@@ -1,0 +1,51 @@
+<form [formGroup] = "userForm" >
+  <div class="row">
+  <div class = "column">
+
+  <div class="container" style="background-color:#2C363F;color:white; right: 300px;">
+
+    <h1> Checkout </h1>
+    <label for="exampleInputEmail1" class="form-label">City</label>
+    <input type="text" class="form-control" formControlName = "City" name="field1" aria-describedby="emailHelp">
+
+ 
+    <label for="exampleInputEmail1" class="form-label">Area</label>
+    <input type="text" class="form-control" formControlName = "Area" name="field2" aria-describedby="emailHelp">
+
+    <label for="exampleInputEmail1" class="form-label">Street</label>
+    <input type="text" class="form-control" formControlName = "Street" name="field3" aria-describedby="emailHelp">
+
+
+      <label for="exampleInputEmail1" class="form-label">House Number</label>
+      <input type="text" class="form-control" formControlName = "House_no" name="field4" aria-describedby="emailHelp">
+
+      <label for="exampleInputEmail1" class="form-label">Contact</label>
+      <input type="text" class="form-control" formControlName = "Contact" name="field5" aria-describedby="emailHelp">
+
+      <button  type="submit" class="btn btn-primary" (click)="userSubmit()"> Place the order</button> 
+      //onClick ="location = '/tracker'"
+     
+  </div>
+  </div>
+  
+  <div class = "column">
+      <div class="container" style="background-color:#2C363F;color:white; right: 50px;top:50px " *ngFor='let us of cart'> 
+         
+          <h4>Cart
+              <span class="price" style="color:black">
+                <i class="fa fa-shopping-cart"></i>
+                <b>{{us.cnt}}</b>
+              </span>
+            </h4>
+            <div *ngFor = 'let us of cartItems' >
+            <p>{{us.Product_Name}}</p><span class="price">Rs. {{us.Line_Total}}</span>
+          </div>
+            <hr>
+            <p><a style = "font-size: 23px;">TOTAL</a><span class="price" style="color:black; padding-right: 3px; font-size: 25px;"><b>Rs. {{us.total}}</b></span></p>
+
+  </div>
+  </div>
+</div>
+ 
+ 
+</form>

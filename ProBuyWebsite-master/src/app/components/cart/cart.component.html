@@ -1,0 +1,52 @@
+<body>
+    <div class="Cart-Container">
+        <h3 class="Heading">CART</h3>
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = 'let us of cartItems'>
+                <td>
+                    <img src="assets/images/{{us.Image}}.jpeg" style="height:120px" /> //png
+                </td>
+                <td>{{us.Product_Name}}</td>
+               
+                <td>
+                    <button class="pm" (click)="plusqty(us.Product_ID, us.Qty)">+</button>
+                  {{us.Qty}} 
+                    <button class="pm" (click)="minusqty(us.Product_ID, us.Qty)">-</button>
+                </td>
+          
+                <td>{{us.Line_Total}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+            
+            <hr>
+            <div class="Header">            
+                <h5 class="Action" (click) = "deletecart()">Drop all items</h5>
+            </div>
+                <div class="checkout">
+                 <div class="total">
+                    <div>
+                     
+                     <div *ngFor='let us of cart'>
+                     <div class="items">Total Items: {{us.cnt}}</div>
+                    <div class="total-amount">Net-Total: {{us.total}}</div>
+                 </div>
+                </div>
+                 </div>
+                    <button onClick ="location = '/checkout'" class="button">Checkout </button>
+                </div>
+    </div>
+   
+    
+</body>

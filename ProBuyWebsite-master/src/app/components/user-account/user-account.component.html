@@ -1,0 +1,35 @@
+<!--show error message-->
+<div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{errormsg}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span> 
+  </button>
+</div>
+
+
+
+<form [formGroup] = "userForm" >
+    <div class="container" style="background-color:rgb(0, 0, 0);color:white">
+
+      <h1> Sign Up </h1>
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input type="email" class="form-control" formControlName = "FirstName" name="field1" aria-describedby="emailHelp">
+ 
+   
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input type="email" class="form-control" formControlName = "LastName" name="field2" aria-describedby="emailHelp">
+
+      <label for="exampleInputEmail1" class="form-label">Contact</label>
+      <input type="email" class="form-control" formControlName = "Contact" name="field3" aria-describedby="emailHelp">
+ 
+  
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName = "Email" name="field4" aria-describedby="emailHelp">
+   
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input type="email" class="form-control" formControlName = "Password" name="field5" aria-describedby="emailHelp">
+        <button *ngIf="!getparamid" type="submit" class="btn btn-primary" class="mainButton" (click)="userSubmit()">Sign Up</button>
+      </div>
+   
+   
+  </form>
